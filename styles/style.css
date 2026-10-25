@@ -508,6 +508,45 @@ h1 {
   animation: spin-pinwheel 10s linear infinite;
 }
 
+.music-button {
+  position: fixed;
+  z-index: 11;
+  bottom: 1.25rem;
+  left: clamp(0.75rem, 2vw, 1.5rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.9rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 5px 18px rgba(4, 32, 61, 0.22);
+  color: var(--blue-deep);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.music-button[hidden] {
+  display: none;
+}
+
+.music-button:hover {
+  background: var(--sky);
+}
+
+.music-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 @keyframes spin-pinwheel {
   to {
     transform: rotate(360deg);

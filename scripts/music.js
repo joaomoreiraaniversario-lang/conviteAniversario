@@ -1,4 +1,5 @@
 const backgroundVideo = document.querySelector(".video-background video");
+const audioButton = document.querySelector(".music-button");
 const audioEvents = ["pointerdown", "keydown"];
 let audioEnabled = false;
 let audioStartPending = false;
@@ -24,11 +25,13 @@ async function enableVideoAudio() {
   try {
     await backgroundVideo.play();
     audioEnabled = true;
+    audioButton.hidden = true;
     audioEvents.forEach(eventName => {
       document.removeEventListener(eventName, enableVideoAudio, true);
     });
   } catch (error) {
     await playVideoMuted();
+    audioButton.hidden = false;
 
     if (error.name !== "NotAllowedError") {
       console.error("Não foi possível reproduzir o áudio do convite.", error);
@@ -38,6 +41,7 @@ async function enableVideoAudio() {
   }
 }
 
+audioButton.addEventListener("click", enableVideoAudio);
 audioEvents.forEach(eventName => {
   document.addEventListener(eventName, enableVideoAudio, true);
 });
