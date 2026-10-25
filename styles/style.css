@@ -653,11 +653,7 @@ h1 {
   animation: spin-pinwheel 10s linear infinite;
 }
 
-.pinwheel-decoration--left {
-  left: clamp(0.75rem, 2vw, 1.5rem);
-}
-
-.pinwheel-decoration--right {
+.pinwheel-decoration {
   right: clamp(0.75rem, 2vw, 1.5rem);
 }
 
@@ -670,7 +666,7 @@ h1 {
   padding: 0.58rem 0.95rem;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 999px;
-  background: rgba(188, 236, 248, 0.3);
+  background: rgba(188, 236, 248, 0.22);
   box-shadow: 0 4px 14px rgba(36, 92, 119, 0.08);
   color: var(--blue-deep);
   font: inherit;
@@ -687,7 +683,7 @@ h1 {
 
 .music-button:hover {
   transform: translateY(-1px);
-  background: rgba(188, 236, 248, 0.56);
+  background: rgba(188, 236, 248, 0.42);
   box-shadow: 0 8px 20px rgba(36, 92, 119, 0.15);
 }
 
@@ -745,6 +741,14 @@ h1 {
   body {
     padding: 1rem;
     padding-bottom: 5rem;
+  }
+
+  .pinwheel-decoration {
+    position: absolute;
+    top: max(45rem, calc(100vh - 4rem));
+    right: 0.65rem;
+    bottom: auto;
+    width: clamp(2.8rem, 12vw, 3.75rem);
   }
 
   .invitation {
