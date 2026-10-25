@@ -2,7 +2,7 @@
 
 Convite digital de uma página para comemorar o primeiro ano do João, com o tema **365 dias de sorrisos**.
 
-O convite mantém o vídeo em tela cheia com uma camada azul translúcida e recupera o visual claro do convite original, com faixa azul-céu, foto do João, catavento animado e sugestões de presentes. Nuvens flutuam suavemente na área azul do convite, próximas à foto, e o catavento gira no canto inferior da tela. No celular, os botões de localização e confirmação ficam empilhados. O áudio tenta iniciar automaticamente; se o navegador bloquear a reprodução automática, ele é ativado no primeiro toque ou tecla, sem exibir um botão de música.
+O convite mantém o vídeo em tela cheia com uma camada azul translúcida e recupera o visual claro do convite original, com faixa azul-céu, foto do João, catavento animado e sugestões de presentes. Nuvens flutuam suavemente na área azul do convite, próximas à foto, e o catavento gira no canto inferior da tela. No celular, os botões de localização e confirmação ficam empilhados. O áudio tenta iniciar automaticamente com som; se o navegador bloquear a reprodução automática, o vídeo começa silencioso e a música é ativada no primeiro toque ou tecla, sem exibir um botão de música.
 
 ## Informações da comemoração
 

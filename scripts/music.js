@@ -42,4 +42,4 @@ audioEvents.forEach(eventName => {
   document.addEventListener(eventName, enableVideoAudio, true);
 });
 
-playVideoMuted();
+enableVideoAudio();
