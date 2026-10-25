@@ -154,6 +154,152 @@ a {
   backdrop-filter: blur(8px);
 }
 
+.sky-decorations {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  height: 15%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sky-sun {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1.25rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: clamp(2.8rem, 5vw, 3.8rem);
+  overflow: visible;
+  color: #ffd36a;
+  filter: drop-shadow(0 2px 5px rgba(211, 148, 42, 0.16));
+  animation: sun-float 5s ease-in-out infinite;
+}
+
+.sky-sun__glow {
+  fill: rgba(255, 239, 181, 0.48);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sun-glow 4s ease-in-out infinite;
+}
+
+.sky-sun__rays {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sun-rays 32s linear infinite;
+}
+
+.sky-cloud {
+  position: absolute;
+  left: -18%;
+  width: clamp(5rem, 10vw, 8rem);
+  color: #fff;
+  opacity: 0.18;
+  filter: blur(0.5px);
+  transform: translateX(-50%);
+  animation: cloud-sail 42s linear infinite;
+}
+
+.sky-cloud--one {
+  top: 12%;
+}
+
+.sky-cloud--two {
+  top: 47%;
+  width: clamp(4rem, 8vw, 6.5rem);
+  opacity: 0.14;
+  animation-name: cloud-sail-reverse;
+  animation-duration: 54s;
+  animation-delay: -27s;
+}
+
+.sky-cloud--three {
+  top: 27%;
+  width: clamp(3.75rem, 7vw, 5.5rem);
+  opacity: 0.12;
+  animation-duration: 50s;
+  animation-delay: -17s;
+}
+
+.sky-cloud--four {
+  top: 68%;
+  width: clamp(5.5rem, 11vw, 8.5rem);
+  opacity: 0.13;
+  animation-name: cloud-sail-reverse;
+  animation-duration: 62s;
+  animation-delay: -38s;
+}
+
+.sky-cloud--five {
+  top: 5%;
+  width: clamp(3.25rem, 6vw, 4.75rem);
+  opacity: 0.11;
+  animation-duration: 68s;
+  animation-delay: -49s;
+}
+
+@keyframes cloud-sail {
+  0% {
+    left: -18%;
+    opacity: 0.05;
+  }
+
+  14%,
+  86% {
+    opacity: 0.2;
+  }
+
+  100% {
+    left: 118%;
+    opacity: 0.05;
+  }
+}
+
+@keyframes cloud-sail-reverse {
+  0% {
+    left: 118%;
+    opacity: 0.04;
+  }
+
+  14%,
+  86% {
+    opacity: 0.16;
+  }
+
+  100% {
+    left: -18%;
+    opacity: 0.04;
+  }
+}
+
+@keyframes sun-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes sun-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes sun-rays {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .invitation__copy {
   position: relative;
   z-index: 2;
@@ -498,7 +644,6 @@ h1 {
 .pinwheel-decoration {
   position: fixed;
   z-index: 10;
-  right: clamp(0.75rem, 2vw, 1.5rem);
   bottom: 1rem;
   display: block;
   width: clamp(3.75rem, 7vw, 5.5rem);
@@ -508,11 +653,19 @@ h1 {
   animation: spin-pinwheel 10s linear infinite;
 }
 
+.pinwheel-decoration--left {
+  left: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.pinwheel-decoration--right {
+  right: clamp(0.75rem, 2vw, 1.5rem);
+}
+
 .music-button {
   position: fixed;
   z-index: 11;
   bottom: 1.25rem;
-  left: clamp(0.75rem, 2vw, 1.5rem);
+  left: 50%;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -527,6 +680,7 @@ h1 {
   font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
+  transform: translateX(-50%);
 }
 
 .music-button[hidden] {
@@ -602,6 +756,10 @@ h1 {
     background:
       linear-gradient(180deg, rgba(188, 236, 248, 0.96) 0 9rem, transparent 9rem),
       rgba(255, 254, 253, 0.96);
+  }
+
+  .sky-decorations {
+    height: 9rem;
   }
 
   .invitation__copy {
@@ -750,5 +908,37 @@ h1 {
 
   .invitation-cloud {
     animation: none;
+  }
+
+  .sky-cloud,
+  .sky-sun,
+  .sky-sun__glow,
+  .sky-sun__rays {
+    animation: none;
+  }
+
+  .sky-cloud {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .sky-cloud--one {
+    left: 18%;
+  }
+
+  .sky-cloud--two {
+    left: 76%;
+  }
+
+  .sky-cloud--three {
+    left: 42%;
+  }
+
+  .sky-cloud--four {
+    left: 58%;
+  }
+
+  .sky-cloud--five {
+    left: 88%;
   }
 }
