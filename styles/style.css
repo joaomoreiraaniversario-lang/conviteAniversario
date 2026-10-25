@@ -744,11 +744,23 @@ h1 {
   }
 
   .pinwheel-decoration {
-    position: absolute;
-    top: max(45rem, calc(100vh - 4rem));
+    position: fixed;
     right: 0.65rem;
-    bottom: auto;
+    bottom: clamp(6rem, 14vh, 8rem);
     width: clamp(2.8rem, 12vw, 3.75rem);
+  }
+
+  .music-button {
+    position: fixed;
+    z-index: 11;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    left: 50%;
+    margin-top: 0;
+    transform: translateX(-50%);
+  }
+
+  .music-button:hover {
+    transform: translate(-50%, -1px);
   }
 
   .invitation {
