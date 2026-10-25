@@ -644,7 +644,7 @@ h1 {
 .pinwheel-decoration {
   position: fixed;
   z-index: 10;
-  bottom: 1rem;
+  bottom: clamp(2rem, 5vh, 3.25rem);
   display: block;
   width: clamp(3.75rem, 7vw, 5.5rem);
   height: auto;
@@ -662,25 +662,23 @@ h1 {
 }
 
 .music-button {
-  position: fixed;
-  z-index: 11;
-  bottom: 1.25rem;
-  left: 50%;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  min-height: 2.9rem;
-  padding: 0.7rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  min-height: 2.65rem;
+  margin-top: 1rem;
+  padding: 0.58rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 999px;
-  background: var(--paper);
-  box-shadow: 0 5px 18px rgba(4, 32, 61, 0.22);
+  background: rgba(188, 236, 248, 0.3);
+  box-shadow: 0 4px 14px rgba(36, 92, 119, 0.08);
   color: var(--blue-deep);
   font: inherit;
   font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
-  transform: translateX(-50%);
+  backdrop-filter: blur(10px);
+  transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .music-button[hidden] {
@@ -688,14 +686,16 @@ h1 {
 }
 
 .music-button:hover {
-  background: var(--sky);
+  transform: translateY(-1px);
+  background: rgba(188, 236, 248, 0.56);
+  box-shadow: 0 8px 20px rgba(36, 92, 119, 0.15);
 }
 
 .music-button svg {
   width: 1.25rem;
   height: 1.25rem;
   flex: 0 0 auto;
-  stroke: currentColor;
+  stroke: var(--blue);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
@@ -760,6 +760,11 @@ h1 {
 
   .sky-decorations {
     height: 9rem;
+  }
+
+  .sky-cloud {
+    color: #5797b0;
+    filter: blur(0.35px);
   }
 
   .invitation__copy {
